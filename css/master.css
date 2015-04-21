@@ -1,0 +1,48 @@
+html{
+height:100%;
+}
+body 
+{ 
+height:96%;
+display:block;
+font-size:16px;
+line-height:1.5em;
+font-weight: 700;
+font-style: normal;
+margin: 0 auto; max-width: 1080px; min-width: 280px; 
+/*background-image:url(/img/Rust-20.png);*/
+background-repeat:repeat; 
+background-position:center;
+background-color:rgba(170,131,57,0.6);
+
+}
+header{
+text-align:center;
+}
+article{
+width:49.5%;
+height:500px;
+float:left;
+text-align: center;
+padding-top:5%;
+margin-left:0.5%;
+background-color:rgba(170,131,57,0.6);
+}
+#lista{
+text-align:left;
+}
+#back_slika{
+float:left;
+}
+#opis_hrv{
+display:block;
+}
+#opis_engl{
+
+display:none;
+}
+
+footer{
+float:bottom;
+text-align:center;
+}
