@@ -14,6 +14,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 	$upit= "SELECT * FROM `Pica` LIMIT 0, 30 ";
+    mysqli_set_charset($conn, "utf8");
 
 if ($rezultat = mysqli_query($conn,$upit))
 {

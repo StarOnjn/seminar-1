@@ -14,7 +14,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 //ovaj dio je kriv, ID je potrebno uzeti iz sesije ili već od kuda se namjesti
-	$upit= "SELECT * FROM `Jela` WHERE ID='3'";	
+	$upit= "SELECT * FROM `Jela` WHERE ID='$_GET[id]'";
+ mysqli_set_charset($conn, "utf8");
 $rezultat = mysqli_query($conn,$upit);
 $obj=mysqli_fetch_object($rezultat);
 ?> 
@@ -48,7 +49,7 @@ $obj=mysqli_fetch_object($rezultat);
 	<article id="article-l">
 	<!--Radi gumb za povratak na početak-->
 	<a href="index.php" id="back_slika">
-	<img src="/img/back.png" style="width:40px;height:40px">
+	<img src="img/back.png" style="width:40px;height:40px">
 	</a>
 	</br>
 	</br>
@@ -65,7 +66,9 @@ $obj=mysqli_fetch_object($rezultat);
 	</span>
 	</article>
 	<article id="article-d">
-	<img src="/img/uk.png" id="zastava_slika" onclick="jezik()" style="float:right; width:6%;height:6%;">
+        <div onclick="jezik()">
+	<img src="img/uk.png" id="zastava_slika"  style="float:right; width:6%;height:6%;">
+        </div>
 	<script>
 	function jezik(){
 		 var eng = document.getElementById('opis_engl');
@@ -74,13 +77,13 @@ $obj=mysqli_fetch_object($rezultat);
 		 if (hr.style.display="block"){
 			 eng.style.display="block";
 			 hr.style.display="none";
-			 zastava.src="/img/cro.gif";
+			 zastava.src="img/cro.gif";
 		 }
 		 //ne radi kako treba, ne mogu otkriti gdje je greška u logici
-		 else if (eng.style.display="block"){
+        else if (hr.style.display="none"){
 			 eng.style.display="none";
 			 hr.style.display="block";
-			 zastava.src="/img/uk.png";
+			 zastava.src="img/uk.png";
 		 }		 
 	}
 	</script>
